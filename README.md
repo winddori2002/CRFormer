@@ -5,5 +5,5 @@ This is a Pytorch implementation of [CRFormer: Complementary Reliability perspec
 The overall architecture of CRFormer is as below:
 
 <p align="center">
-	<img src="./img/model1.png" alt="CRFormer" width="70%" height="70%"/>
+	<img src="./img/model1.png" alt="CRFormer" width="60%" height="60%"/>
 </p>

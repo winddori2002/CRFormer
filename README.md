@@ -16,87 +16,39 @@ The OS, python and pytorch version needs as below:
 - python >= 3.7.4
 - pytorch >= 1.7.1
 
-# How to use
+# Details
 
-## 1. Notifications
+## 0. Notifications
 
-We use VoiceBank-DEMAND (Valentini) dataset consisting of 28 speakers for training MANNER. 
+We use the claim data from 2006 to 2021 provided automobile company, but we do not provide the dataset in this repository.
+Before we train CRFormer, we take some processes for set up.
 
-- The dataset can be downloaded [here](https://datashare.ed.ac.uk/handle/10283/2791).
-- We use [282,287] speakers as validation set.
+- Depending on automobile reliabilities, we adopt a time-series K means cluster model for obtaining pattern information used for evaluation. 
+- We take a process for generating two kinds of nested sequence (time- and mileage-based nested sequence) 
 
 ## 1. Train
 
-### Training with default settings
+### Training with arguments
 
-You can train MANNER with the default setting by running the following code.
-
-```
-python main.py train --aug True --aug_type tempo
-```
-
-### Training with other arguments
-If you want to edit model settings, you can run the following code with other arguments. 
-
-In ```config.py```, you can find other arguments, such as batch size, epoch, and so on.
+We give a short description for arguments as belows.
+You can find more details of arguments such as training and evaluation settings in ```config.py```.
 
 ```
-python main.py train --hidden 60 --depth 4 --growth 2 --kernel_size 8 --stride 4 --segment_len 64 --aug True --aug_type tempo
+python main.py train 
 
-MANNER arguments:
-  --in_channels : initial in channel size (default:1)
-  --out_channels: initial out channel size (default:1)
-  --hidden      : channel size to expand (default:60)
-  --depth       : number of layers for encoder and decoder (default:4)
-  --kernel_size : kernel size for UP/DOWN conv (default:8)
-  --stride      : stride for UP/DOWN conv (default:4)
-  --growth      : channel expansion ration (default:2)
-  --head        : number of head for global attention (default:1)
-  --segment_len : chunk size for overlapped chunking in a dual-path processing (default:64)
-  
-Setting arguments:
-  --sample_rate: sample_rate (default:16000)
-  --segment    : segment the audio signal with seconds (default:4)
-  --set_stride : Overlapped seconds when segment the signal (default:1)
-  
-Augmentation arguments:
-  --aug     : True/False 
-  --aug_type: augmentation type (tempo, speed, shift available. only shift available on Windows.)
+CRFormer arguments:
+  --scaling    : input scaling option (default:False)
+  --hidden_size: hidden size (default:256)
+  --num_layers : number of layers for Transformer encoder (default:6)
+  --d_ffn      : hidden size for Transformer ffn (default:256)
+  --n_head     : number of head for multi-head attention (default:4)
+  --d_k        : dimension for each head in multi-head attention (default:64)
+  --dropout    : dropout ratio (default:0.3)
+  --use_feat   : usage feature option for CRFormer-F (default:False)
+  --features   : feature list of claim data 
 ```
 
-### Training with logging
-
-The logs are uploaded on [neptune.ai](https://neptune.ai/)
-```
-python main.py train --logging True --logging_cut -1
-
-Logging arguments:
-  --logging    : True/False
-  --logging_cut: log after epochs when the epoch is bigger than logging_cut
-```
-
-## 2. evaluation
-
-After training, you can evaluate the model in terms of PESQ and STOI by running the code below.
-You need to keep the model arguments in the training phase.
-```
-python main.py test --save_enhanced True --enhanced_path []
-
-evaluation arguments:
-  --save_enhanced: saving enhanced audio file
-  --enhanced_path: enhanced file directory
-```
-
-If you want to evaluate with all measures (PESQ, STOI, CSIG, CBAK, COVL), run the following code.
-```
-python eval_measure.py
-
-clean_path    = 'test clean path'
-enhanced_path = 'enhanced path'
-```
-
-
-# Experimental Results
+## 2. Experimental Results
 
 We provide visualizations of result samples. They are predicted by CRFormer, CRFormer-F, and other benchmark models.
 (a) and (b) indicate prediction results for time (days) and mileage, respectively.
@@ -104,8 +56,6 @@ We provide visualizations of result samples. They are predicted by CRFormer, CRF
 <p align="center">
 	<img src="./img/results.png" alt="results" width="80%" height="80%"/>
 </p>
-
-
 
 
 ## Citation

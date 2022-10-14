@@ -1,11 +1,17 @@
 # CRFormer: Complementary Reliability perspective Transformer (IEEE ACCESS)
 
-This is a Pytorch implementation of [CRFormer: Complementary Reliability perspective Transformer for Automotive Components Reliability Prediction Based on Claim Data](https://ieeexplore.ieee.org/document/9863836).
+This is a Pytorch implementation of [CRFormer: Complementary Reliability perspective Transformer for Automotive Components Reliability Prediction Based on Claim Data](https://ieeexplore.ieee.org/document/9863836). The main idea of the paper is to represent both automobile reliabilities (time and mileage) for predicting future failures in respect of each reliability. CRFormer consists of a  Nested sequence embedding module, Transformer encoder, and context attention based decoder.
 
 The overall architecture of CRFormer is as below:
 
 <p align="center">
 	<img src="./img/model1.png" alt="CRFormer" width="60%" height="60%"/>
+</p>
+
+The figure of Nested sequence embedding is as below:
+
+<p align="center">
+	<img src="./img/nested_sequence_embedding.png" alt="nested_sequence_embedding" width="60%" height="60%"/>
 </p>
 
 # Installation & Enviornment

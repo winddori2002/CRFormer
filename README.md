@@ -11,7 +11,7 @@ The overall architecture of CRFormer is as below:
 The figure of Nested sequence embedding is as below:
 
 <p align="left">
-	<img src="./img/nested_sequence_embedding.png" alt="nested_sequence_embedding" width="40%" height="40%"/>
+	<img src="./img/nested_sequence_embedding.png" alt="nested_sequence_embedding" width="30%" height="30%"/>
 </p>
 
 # Installation & Enviornment

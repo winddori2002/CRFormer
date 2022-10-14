@@ -167,14 +167,15 @@ enhance arguments:
   --model_name: Model version (small, base, large) - you can use one of them
 ```
 
-
-## 6. Enhanced samples
-
-We provide randomly selected audio sample pairs in ```./samples```.  Each pair is composed of enhanced speech and noisy speech. We tried to choose some pairs containing more noises.
-
 # Experimental Results
 
 The experimental results and parameter settings of MANNER versions are as below.
+
+<p align="center">
+	<img src="./img/results.png" alt="results" width="60%" height="60%"/>
+</p>
+
+
 
 
 ## Citation

@@ -169,10 +169,11 @@ enhance arguments:
 
 # Experimental Results
 
-The experimental results and parameter settings of MANNER versions are as below.
+We provide visualizations of result samples. They are predicted by CRFormer, CRFormer-F, and other benchmark models.
+(a) and (b) indicate prediction results for time (days) and mileage, respectively.
 
 <p align="center">
-	<img src="./img/results.png" alt="results" width="60%" height="60%"/>
+	<img src="./img/results.png" alt="results" width="80%" height="80%"/>
 </p>
 
 

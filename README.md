@@ -14,17 +14,7 @@ The OS, python and pytorch version needs as below:
 - Windows
 - Linux 
 - python >= 3.7.4
-- pytorch == 1.7.1
-- torchaudio == 0.7.2
-
-Notice that if you use windows, "tempo" and "speed" augmentation based on sox are not available. You need to use "shift" augmentation.
-
-You can install requirements through git and requirements.txt except for pytorch and torchaudio.
-```C
-git clone https://github.com/winddori2002/MANNER.git
-cd MANNER
-pip install -r requirements.txt
-```
+- pytorch >= 1.7.1
 
 # Prepare for usage
 

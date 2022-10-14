@@ -18,61 +18,12 @@ The OS, python and pytorch version needs as below:
 
 # How to use
 
-## 1. Prepare dataset
+## 1. Notifications
 
 We use VoiceBank-DEMAND (Valentini) dataset consisting of 28 speakers for training MANNER. 
 
 - The dataset can be downloaded [here](https://datashare.ed.ac.uk/handle/10283/2791).
 - We use [282,287] speakers as validation set.
-
-## 2. Downsample
-
-The sample rate of the dataset is 48kHz.
-
-For a fair comparison, we downsample the audio files from 48kHz to 16kHz.
-
-- To downsample the audio, run the following code and edit the directories.
-
-```
-python downsampling.py
-```
-  
-- In the ```downsampleing.py``` script, you should change the contents as follows.
-  
-```
-downsample_rate  = 16000
-clean_train_path = 'The original clean trainset path'
-noisy_train_path = 'The original noisy trainset path'
-clean_test_path  = 'The original clean testset path'
-noisy_test_path  = 'The original noisy testset path'
-resample_path    = 'Resampled path'
-```
-  
-## 3. Make data path files
-
-We make json file consisting of the audio path for loading data efficiently. Train (clean, noisy) and 
-Test (clean, noisy): four json files need to be generated for training. 
-
-The json files will be generated in ```./data_path```.
-
-Notice that the data is downsampled.
-
-- To make json file, run the following code and edit the directories.
-
-```
-python make_datapath.py
-```
-
-- In the ```make_datapath.py```, you should change the contents as follows.
-
-```
-clean_train_path = 'The resampled clean trainset path'
-noisy_train_path = 'The resampled noisy trainset path'
-clean_test_path  = 'The resampled clean testset path'
-noisy_test_path  = 'The resampled noisy testset path'
-```
-
-# How to use
 
 ## 1. Train
 

@@ -1,6 +1,6 @@
 # CRFormer: Complementary Reliability perspective Transformer (IEEE ACCESS)
 
-This is a Pytorch implementation of [CRFormer: Complementary Reliability perspective Transformer for Automotive Components Reliability Prediction Based on Claim Data](https://ieeexplore.ieee.org/document/9863836). The main idea of the paper is to represent both automobile reliabilities (time and mileage) for predicting future failures in respect of each reliability. CRFormer consists of a  Nested sequence embedding module, Transformer encoder, and context attention based decoder.
+This is a Pytorch implementation of [CRFormer: Complementary Reliability perspective Transformer for Automotive Components Reliability Prediction Based on Claim Data](https://ieeexplore.ieee.org/document/9863836). The main idea of the paper is to represent both automobile reliabilities (time and mileage) for predicting future failures in respect of each reliability. CRFormer consists of a  Nested sequence embedding module, Transformer encoder, and context attention-based decoder.
 
 The overall architecture of CRFormer is as below:
 
@@ -26,17 +26,17 @@ The OS, python and pytorch version needs as below:
 
 ## 0. Notifications
 
-We use the claim data from 2006 to 2021 provided automobile company, but we do not provide the dataset in this repository.
-Before we train CRFormer, we take some processes for set up.
+We use the claim data from 2006 to 2021 provided by automobile company, but we do not provide the dataset in this repository.
+Before we train CRFormer, we take some processes for setup.
 
 - Depending on automobile reliabilities, we adopt a time-series K means cluster model for obtaining pattern information used for evaluation. 
-- We take a process for generating two kinds of nested sequence (time- and mileage-based nested sequence) 
+- We take a process for generating two kinds of nested sequences (time- and mileage-based nested sequences).
 
 ## 1. Train
 
 ### Training with arguments
 
-We give a short description for arguments as belows.
+We give a short description for the argument as below.
 You can find more details of arguments such as training and evaluation settings in ```config.py```.
 
 ```

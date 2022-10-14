@@ -60,7 +60,7 @@ We provide visualizations of result samples. They are predicted by CRFormer, CRF
 (a) and (b) indicate prediction results for time (days) and mileage, respectively.
 
 <p align="left">
-	<img src="./img/results.png" alt="results" width="80%" height="80%"/>
+	<img src="./img/results.png" alt="results" width="85%" height="85%"/>
 </p>
 
 

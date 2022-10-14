@@ -4,14 +4,14 @@ This is a Pytorch implementation of [CRFormer: Complementary Reliability perspec
 
 The overall architecture of CRFormer is as below:
 
-<p align="center">
+<p align="left">
 	<img src="./img/model1.png" alt="CRFormer" width="60%" height="60%"/>
 </p>
 
 The figure of Nested sequence embedding is as below:
 
-<p align="center">
-	<img src="./img/nested_sequence_embedding.png" alt="nested_sequence_embedding" width="60%" height="60%"/>
+<p align="left">
+	<img src="./img/nested_sequence_embedding.png" alt="nested_sequence_embedding" width="40%" height="40%"/>
 </p>
 
 # Installation & Enviornment
@@ -59,7 +59,7 @@ CRFormer arguments:
 We provide visualizations of result samples. They are predicted by CRFormer, CRFormer-F, and other benchmark models.
 (a) and (b) indicate prediction results for time (days) and mileage, respectively.
 
-<p align="center">
+<p align="left">
 	<img src="./img/results.png" alt="results" width="80%" height="80%"/>
 </p>
 

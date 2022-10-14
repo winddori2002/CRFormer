@@ -16,7 +16,7 @@ The OS, python and pytorch version needs as below:
 - python >= 3.7.4
 - pytorch >= 1.7.1
 
-# Prepare for usage
+# How to use
 
 ## 1. Prepare dataset
 
@@ -144,28 +144,6 @@ clean_path    = 'test clean path'
 enhanced_path = 'enhanced path'
 ```
 
-
-## 3. Pretrained weights
-
-The pretrained weights of MANNER is uploaded on the github release [here](https://github.com/winddori2002/MANNER/releases/tag/v1.0)
-
-
-## 4. MANNER small
-
-For MANNER (small), it is necessary to change the code in ```./model.py``` since it has a different structure from MANNER (base). The code for MANNER (small) is commented below the line for MANNER in  ```./model.py```.
-
-## 5. Custom enhancement
-
-For custom enhancement, you can estimate enhanced speech by running code with ```custom_enhance.py```. 
-The codes include input data processing (downsample from 48 kHz to 16 kHz).
-```
-python custom_enhance.py
-
-enhance arguments:
-  --device: Cuda device or CPU
-  --noisy_path: Path (folder) which contains noisy wav files
-  --model_name: Model version (small, base, large) - you can use one of them
-```
 
 # Experimental Results
 
